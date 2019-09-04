@@ -3,7 +3,7 @@
 To get started:
 
 ```
-git clone https://github.com/dev-academy-challenges/boilerplate-fullstack [your-project-name]
+git clone https://github.com/WillHoughton/boilerplate-fullstack [your-project-name]
 cd [your-project-name]
 npm install # to install dependencies
 npm run dev # to start the dev server
