@@ -1,28 +1,19 @@
 import React from 'react'
 
-import { getFruits } from '../apiClient'
+import MyForm, {defaultData} from './MyForm'
+import AttendanceLyric from './AttendanceLyric'
 
 class App extends React.Component {
-  state = {
-    fruits: []
+  state = { data: defaultData }
+  updateData = (data) => {
+    let {name, intro, onTime} = data
+    this.setState({data: {name, intro, onTime}})
   }
-
-  componentDidMount () {
-    getFruits()
-      .then(fruits => {
-        this.setState({fruits})
-      })
-  }
-
   render () {
     return (
       <div className='app'>
-        <h1>Fullstack Boilerplate</h1>
-        <ul>
-          {this.state.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
-          ))}
-        </ul>
+        <MyForm onSave={this.updateData} />  
+        <AttendanceLyric {...this.state.data} />
       </div>
     )
   }
