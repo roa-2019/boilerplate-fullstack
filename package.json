@@ -23,10 +23,6 @@
     ]
   },
   "jest": {
-    "setupFiles": [
-      "./test/client/config/jsdom.js",
-      "./test/client/config/enzyme.js"
-    ]
   },
   "dependencies": {
     "express": "^4.16.4",

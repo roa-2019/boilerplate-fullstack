@@ -3,9 +3,14 @@ const config = require('../knexfile')[env]
 const db = require('knex')(config)
 
 module.exports = {
-  getFruits
+  getFruits,
+  saveFruit
 }
 
-function getFruits () {
+function saveFruit (fruit, db=db) {
+  return db('fruit').insert(fruit)
+}
+
+function getFruits (db=db) {
   return db('fruit').select()
 }
